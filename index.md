@@ -7,6 +7,4 @@
 
 <img src="images/MusicAnalysis.png?raw=true"/>
 
-#### AI Images
-[Fantasy Football](/FF)
 ---
