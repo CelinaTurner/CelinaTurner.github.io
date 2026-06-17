@@ -1,0 +1,88 @@
+<svg viewBox="0 0 1040 600" xmlns="http://www.w3.org/2000/svg" font-family="'Segoe UI', Helvetica, Arial, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0f172a"/>
+      <stop offset="1" stop-color="#1e293b"/>
+    </linearGradient>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="7" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L7,3 L0,6 Z" fill="#94a3b8"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="1040" height="600" rx="14" fill="url(#bg)"/>
+
+  <!-- Title -->
+  <text x="40" y="48" fill="#f8fafc" font-size="24" font-weight="700">Retail Analytics — Medallion Architecture</text>
+  <text x="40" y="74" fill="#94a3b8" font-size="14">Databricks Lakehouse · UCI Online Retail dataset · Serverless compute</text>
+
+  <!-- Source -->
+  <rect x="40" y="200" width="120" height="110" rx="10" fill="#1e293b" stroke="#475569" stroke-width="1.5"/>
+  <text x="100" y="245" fill="#e2e8f0" font-size="13" font-weight="600" text-anchor="middle">Source</text>
+  <text x="100" y="266" fill="#94a3b8" font-size="11" text-anchor="middle">UCI Online</text>
+  <text x="100" y="281" fill="#94a3b8" font-size="11" text-anchor="middle">Retail CSV</text>
+
+  <!-- Bronze -->
+  <rect x="210" y="190" width="170" height="130" rx="10" fill="#3f2d1b" stroke="#b45309" stroke-width="2"/>
+  <circle cx="232" cy="216" r="7" fill="#cd7f32"/>
+  <text x="248" y="221" fill="#fcd9a8" font-size="15" font-weight="700">Bronze</text>
+  <text x="228" y="252" fill="#e7c9a3" font-size="11.5">Raw ingestion</text>
+  <text x="228" y="272" fill="#cbb79c" font-size="11">• as-landed columns</text>
+  <text x="228" y="290" fill="#cbb79c" font-size="11">• full history kept</text>
+  <text x="228" y="308" fill="#cbb79c" font-size="11">• Delta format</text>
+
+  <!-- Silver -->
+  <rect x="430" y="190" width="170" height="130" rx="10" fill="#2b3340" stroke="#94a3b8" stroke-width="2"/>
+  <circle cx="452" cy="216" r="7" fill="#cbd5e1"/>
+  <text x="468" y="221" fill="#f1f5f9" font-size="15" font-weight="700">Silver</text>
+  <text x="448" y="252" fill="#e2e8f0" font-size="11.5">Cleaned &amp; conformed</text>
+  <text x="448" y="272" fill="#cbd5e1" font-size="11">• typed, deduped</text>
+  <text x="448" y="290" fill="#cbd5e1" font-size="11">• customer_id renamed</text>
+  <text x="448" y="308" fill="#cbd5e1" font-size="11">• valid-sales filter</text>
+
+  <!-- Gold -->
+  <rect x="650" y="190" width="170" height="130" rx="10" fill="#3a3115" stroke="#d4af37" stroke-width="2"/>
+  <circle cx="672" cy="216" r="7" fill="#d4af37"/>
+  <text x="688" y="221" fill="#f5e9c0" font-size="15" font-weight="700">Gold</text>
+  <text x="668" y="252" fill="#efe2b8" font-size="11.5">Business marts</text>
+  <text x="668" y="272" fill="#ddcf9e" font-size="11">• revenue by country</text>
+  <text x="668" y="290" fill="#ddcf9e" font-size="11">• RFM / cohorts</text>
+  <text x="668" y="308" fill="#ddcf9e" font-size="11">• aggregated KPIs</text>
+
+  <!-- Consumption -->
+  <rect x="880" y="200" width="120" height="110" rx="10" fill="#1e293b" stroke="#475569" stroke-width="1.5"/>
+  <text x="940" y="245" fill="#e2e8f0" font-size="13" font-weight="600" text-anchor="middle">BI &amp;</text>
+  <text x="940" y="263" fill="#e2e8f0" font-size="13" font-weight="600" text-anchor="middle">SQL</text>
+  <text x="940" y="285" fill="#94a3b8" font-size="11" text-anchor="middle">dashboards,</text>
+  <text x="940" y="300" fill="#94a3b8" font-size="11" text-anchor="middle">ad-hoc</text>
+
+  <!-- Flow arrows -->
+  <line x1="162" y1="255" x2="206" y2="255" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="382" y1="255" x2="426" y2="255" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="602" y1="255" x2="646" y2="255" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="822" y1="255" x2="876" y2="255" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Unity Catalog governance band -->
+  <rect x="210" y="120" width="610" height="42" rx="8" fill="#172554" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="515" y="146" fill="#bfdbfe" font-size="12" font-weight="600" text-anchor="middle">Unity Catalog governance · catalog: retail_portfolio · schemas: bronze / silver / gold</text>
+  <line x1="295" y1="162" x2="295" y2="186" stroke="#3b82f6" stroke-width="1" stroke-dasharray="4 3"/>
+  <line x1="515" y1="162" x2="515" y2="186" stroke="#3b82f6" stroke-width="1" stroke-dasharray="4 3"/>
+  <line x1="735" y1="162" x2="735" y2="186" stroke="#3b82f6" stroke-width="1" stroke-dasharray="4 3"/>
+
+  <!-- Orchestration band -->
+  <rect x="210" y="360" width="610" height="44" rx="8" fill="#14342b" stroke="#10b981" stroke-width="1.5"/>
+  <text x="515" y="380" fill="#a7f3d0" font-size="13" font-weight="600" text-anchor="middle">Databricks Workflows — scheduled DAG</text>
+  <text x="515" y="396" fill="#6ee7b7" font-size="11" text-anchor="middle">ingest → clean → aggregate, task dependencies enforced</text>
+  <line x1="295" y1="320" x2="295" y2="358" stroke="#10b981" stroke-width="1" stroke-dasharray="4 3"/>
+  <line x1="515" y1="320" x2="515" y2="358" stroke="#10b981" stroke-width="1" stroke-dasharray="4 3"/>
+  <line x1="735" y1="320" x2="735" y2="358" stroke="#10b981" stroke-width="1" stroke-dasharray="4 3"/>
+
+  <!-- SQL alerting -->
+  <rect x="650" y="430" width="350" height="44" rx="8" fill="#3b1d2b" stroke="#f43f5e" stroke-width="1.5"/>
+  <text x="825" y="450" fill="#fecdd3" font-size="13" font-weight="600" text-anchor="middle">SQL Alerts</text>
+  <text x="825" y="466" fill="#fda4af" font-size="11" text-anchor="middle">threshold checks on Gold marts → notify</text>
+  <line x1="735" y1="320" x2="735" y2="428" stroke="#f43f5e" stroke-width="1" stroke-dasharray="4 3" opacity="0.5"/>
+
+  <!-- Legend / footer -->
+  <text x="40" y="520" fill="#64748b" font-size="11">Layers progressively refine data quality left → right. Governance (top) and orchestration (bottom) span all layers.</text>
+  <text x="40" y="540" fill="#64748b" font-size="11">All compute runs on Databricks Serverless; tables stored as Delta.</text>
+</svg>

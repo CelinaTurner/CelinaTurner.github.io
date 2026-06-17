@@ -1,0 +1,93 @@
+<svg viewBox="0 0 1040 620" xmlns="http://www.w3.org/2000/svg" font-family="'Segoe UI', Helvetica, Arial, sans-serif">
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0f172a"/>
+      <stop offset="1" stop-color="#1e293b"/>
+    </linearGradient>
+    <marker id="arrow2" markerWidth="10" markerHeight="10" refX="7" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L7,3 L0,6 Z" fill="#64748b"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="1040" height="620" rx="14" fill="url(#bg2)"/>
+
+  <text x="40" y="48" fill="#f8fafc" font-size="24" font-weight="700">Snowflake RBAC — Role Hierarchy</text>
+  <text x="40" y="74" fill="#94a3b8" font-size="14">Functional roles inherit access roles · arrows point from child to the role that inherits it</text>
+
+  <!-- Column headers -->
+  <text x="150" y="120" fill="#cbd5e1" font-size="13" font-weight="600" text-anchor="middle">USERS</text>
+  <text x="420" y="120" fill="#cbd5e1" font-size="13" font-weight="600" text-anchor="middle">FUNCTIONAL ROLES</text>
+  <text x="720" y="120" fill="#cbd5e1" font-size="13" font-weight="600" text-anchor="middle">ACCESS ROLES</text>
+  <text x="950" y="120" fill="#cbd5e1" font-size="13" font-weight="600" text-anchor="middle">OBJECTS</text>
+
+  <!-- Users -->
+  <rect x="80" y="160" width="140" height="44" rx="8" fill="#1e293b" stroke="#475569"/>
+  <text x="150" y="187" fill="#e2e8f0" font-size="12" text-anchor="middle">ingestion svc</text>
+  <rect x="80" y="290" width="140" height="44" rx="8" fill="#1e293b" stroke="#475569"/>
+  <text x="150" y="317" fill="#e2e8f0" font-size="12" text-anchor="middle">dbt runner</text>
+  <rect x="80" y="420" width="140" height="44" rx="8" fill="#1e293b" stroke="#475569"/>
+  <text x="150" y="447" fill="#e2e8f0" font-size="12" text-anchor="middle">analyst</text>
+
+  <!-- Functional roles -->
+  <rect x="350" y="160" width="140" height="44" rx="8" fill="#1e3a2f" stroke="#10b981" stroke-width="1.8"/>
+  <text x="420" y="187" fill="#a7f3d0" font-size="12.5" font-weight="600" text-anchor="middle">FR_LOADER</text>
+  <rect x="350" y="290" width="140" height="44" rx="8" fill="#1e3a2f" stroke="#10b981" stroke-width="1.8"/>
+  <text x="420" y="317" fill="#a7f3d0" font-size="12.5" font-weight="600" text-anchor="middle">FR_TRANSFORMER</text>
+  <rect x="350" y="420" width="140" height="44" rx="8" fill="#1e3a2f" stroke="#10b981" stroke-width="1.8"/>
+  <text x="420" y="447" fill="#a7f3d0" font-size="12.5" font-weight="600" text-anchor="middle">FR_ANALYST</text>
+
+  <!-- Access roles -->
+  <rect x="650" y="150" width="150" height="40" rx="8" fill="#3a2f15" stroke="#d4af37" stroke-width="1.8"/>
+  <text x="725" y="175" fill="#f5e9c0" font-size="12" font-weight="600" text-anchor="middle">AR_RAW_WRITE</text>
+  <rect x="650" y="210" width="150" height="40" rx="8" fill="#3a2f15" stroke="#d4af37" stroke-width="1.8"/>
+  <text x="725" y="235" fill="#f5e9c0" font-size="12" font-weight="600" text-anchor="middle">AR_RAW_READ</text>
+  <rect x="650" y="300" width="150" height="40" rx="8" fill="#3a2f15" stroke="#d4af37" stroke-width="1.8"/>
+  <text x="725" y="325" fill="#f5e9c0" font-size="12" font-weight="600" text-anchor="middle">AR_ANALYTICS_WRITE</text>
+  <rect x="650" y="410" width="150" height="40" rx="8" fill="#3a2f15" stroke="#d4af37" stroke-width="1.8"/>
+  <text x="725" y="435" fill="#f5e9c0" font-size="12" font-weight="600" text-anchor="middle">AR_ANALYTICS_READ</text>
+
+  <!-- Objects -->
+  <rect x="890" y="150" width="120" height="40" rx="8" fill="#1e293b" stroke="#475569"/>
+  <text x="950" y="175" fill="#cbd5e1" font-size="11.5" text-anchor="middle">RAW db + WH</text>
+  <rect x="890" y="300" width="120" height="40" rx="8" fill="#1e293b" stroke="#475569"/>
+  <text x="950" y="320" fill="#cbd5e1" font-size="11.5" text-anchor="middle">ANALYTICS</text>
+  <text x="950" y="334" fill="#cbd5e1" font-size="11.5" text-anchor="middle">db + WH</text>
+
+  <!-- user -> functional -->
+  <line x1="222" y1="182" x2="346" y2="182" stroke="#64748b" stroke-width="1.8" marker-end="url(#arrow2)"/>
+  <line x1="222" y1="312" x2="346" y2="312" stroke="#64748b" stroke-width="1.8" marker-end="url(#arrow2)"/>
+  <line x1="222" y1="442" x2="346" y2="442" stroke="#64748b" stroke-width="1.8" marker-end="url(#arrow2)"/>
+
+  <!-- functional -> access (inheritance) -->
+  <!-- LOADER -> RAW_WRITE -->
+  <path d="M492,178 C570,172 600,170 646,170" fill="none" stroke="#10b981" stroke-width="1.8" marker-end="url(#arrow2)"/>
+  <!-- TRANSFORMER -> RAW_READ -->
+  <path d="M492,305 C560,270 590,235 646,230" fill="none" stroke="#10b981" stroke-width="1.8" marker-end="url(#arrow2)"/>
+  <!-- TRANSFORMER -> ANALYTICS_WRITE -->
+  <path d="M492,315 C560,318 600,320 646,320" fill="none" stroke="#10b981" stroke-width="1.8" marker-end="url(#arrow2)"/>
+  <!-- ANALYST -> ANALYTICS_READ -->
+  <path d="M492,442 C560,435 600,430 646,430" fill="none" stroke="#10b981" stroke-width="1.8" marker-end="url(#arrow2)"/>
+
+  <!-- access -> access (WRITE implies READ) -->
+  <path d="M725,190 L725,208" fill="none" stroke="#d4af37" stroke-width="1.5" stroke-dasharray="4 3" marker-end="url(#arrow2)"/>
+  <path d="M725,340 L725,408" fill="none" stroke="#d4af37" stroke-width="1.5" stroke-dasharray="4 3" marker-end="url(#arrow2)"/>
+
+  <!-- access -> objects (grants) -->
+  <line x1="802" y1="170" x2="886" y2="170" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrow2)"/>
+  <line x1="802" y1="230" x2="886" y2="180" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrow2)"/>
+  <line x1="802" y1="320" x2="886" y2="320" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrow2)"/>
+  <line x1="802" y1="430" x2="886" y2="330" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrow2)"/>
+
+  <!-- SYSADMIN rollup -->
+  <rect x="350" y="520" width="450" height="40" rx="8" fill="#312e1a" stroke="#eab308" stroke-width="1.5"/>
+  <text x="575" y="545" fill="#fde68a" font-size="12.5" font-weight="600" text-anchor="middle">SYSADMIN — all functional roles roll up here</text>
+  <path d="M420,464 L420,500 L560,500 L560,518" fill="none" stroke="#eab308" stroke-width="1.3" stroke-dasharray="4 3" opacity="0.7"/>
+
+  <!-- legend -->
+  <line x1="80" y1="588" x2="110" y2="588" stroke="#10b981" stroke-width="2"/>
+  <text x="118" y="592" fill="#94a3b8" font-size="11">role granted to (inheritance)</text>
+  <line x1="320" y1="588" x2="350" y2="588" stroke="#d4af37" stroke-width="2" stroke-dasharray="4 3"/>
+  <text x="358" y="592" fill="#94a3b8" font-size="11">WRITE inherits READ</text>
+  <line x1="540" y1="588" x2="570" y2="588" stroke="#64748b" stroke-width="2"/>
+  <text x="578" y="592" fill="#94a3b8" font-size="11">user assignment / object grant</text>
+</svg>
