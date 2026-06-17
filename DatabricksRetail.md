@@ -1,4 +1,4 @@
-## databricks-retail-lakehouse / Retail Analytics on Databricks
+## Retail Analytics on Databricks
 
 **Project description:** An end-to-end lakehouse built on Databricks using the public [UCI Online Retail dataset](https://archive.ics.uci.edu/dataset/352/online+retail) — roughly a year of transactions from a UK-based online retailer. The project implements the medallion architecture (Bronze → Silver → Gold), governs the data with Unity Catalog, orchestrates the refresh with a Databricks Workflows DAG, and adds SQL alerting on the business layer. Everything runs on Serverless compute. The aim was to demonstrate the modern Databricks platform features rather than just a single notebook of analysis.
 
