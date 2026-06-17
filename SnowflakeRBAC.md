@@ -1,4 +1,4 @@
-## snowflake-rbac-terraform / Snowflake RBAC as Code
+## Snowflake RBAC as Code
 
 **Project description:** A complete Snowflake account — warehouses, databases, schemas, and a role-based access control model — defined entirely in Terraform and deployed through GitHub Actions. The motivation was to bring the same infrastructure-as-code discipline that engineering teams use for cloud infrastructure to the data platform itself: every warehouse, role, and grant lives in version control, changes go through a pull request with a visible plan, and nothing is clicked together by hand in the Snowflake UI.
 
