@@ -28,6 +28,6 @@ A full Snowflake account — warehouses, databases, and a role-based access cont
 
 Exploratory analysis and unsupervised clustering of a Spotify dataset spanning 1900–2021: popularity trends, prolific artists, audio-feature correlations, and K-Means song clusters in Python.
 
-![](https://celinaturner.github.io/images/MusicAnalysis.png?raw=true)
+<img src="https://raw.githubusercontent.com/CelinaTurner/spotify-analysis-medley/main/images/medley-music-analysis.svg"/>
 
 ---
