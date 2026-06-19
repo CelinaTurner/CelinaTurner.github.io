@@ -13,11 +13,11 @@ A full Snowflake account — warehouses, databases, and a role-based access cont
 
 ---
 
-#### [Retail Analytics on Databricks](/DatabricksRetail)
-An end-to-end lakehouse on the UCI Online Retail dataset: medallion architecture (Bronze/Silver/Gold), Unity Catalog governance, a Workflows orchestration DAG, and SQL alerting — all on Serverless compute.
+#### [Retail Analytics on Databricks](https://celinaturner.github.io/DatabricksRetail)
 
-<img src="images/databricks-medallion-architecture.svg?raw=true"/>
+An end-to-end lakehouse on the UCI Online Retail II dataset: medallion architecture (Bronze/Silver/Gold) with dbt transforms and data-quality tests, Unity Catalog governance, Asset Bundle orchestration, and GitHub Actions CI — all on Serverless compute.
 
+<img src="https://raw.githubusercontent.com/CelinaTurner/databricks-retail-lakehouse/main/images/databricks-lakehouse-architecture.svg"/>
 ---
 
 #### [Medley of Music Analysis](/DataMedley)
